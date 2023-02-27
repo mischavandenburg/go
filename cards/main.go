@@ -3,11 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	card := newCard()
-	fmt.Println(card)
+	cards := []string{"Ace of Diamonds", newCard()}
+	// this replaces cards witht he output of the append function
+	cards = append(cards, "Six of Spades")
+
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
+
+	fmt.Println(cards)
 }
 
-// the word string tells the compiler that the function will always return a string
 func newCard() string {
 	return "Five of Diamonds"
 }
