@@ -27,3 +27,8 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+// a function called deal that takes a type of deck, referenced as d, and an int of handSize. Then we tell Go that we are expecting to return two separate values of type deck.
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}

@@ -4,7 +4,11 @@ package main
 
 func main() {
 	cards := newDeck()
-	// this replaces cards witht he output of the append function
 
-	cards.print()
+	// deal returns 2 different values
+	hand, remainingCards := deal(cards, 5)
+
+	hand.print()
+	remainingCards.print()
+
 }
