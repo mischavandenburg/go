@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -49,4 +50,19 @@ func (d deck) toString() string {
 // we use the toString() function to convert our deck to one long string, and then call the type conversion to byte slice.
 func (d deck) saveToFile(filename string) error {
 	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
+}
+
+func newDeckFromFile(filename string) deck {
+	bs, err := ioutil.ReadFile(filename)
+
+	// this code is only executed if there is an error
+	// very common to see this with functions that return an error object.
+	// We print out the error object and quit the program
+	if err != nil {
+		fmt.Println("Error:", err)
+		// os.Exit causes the program to exit with the given status code. Zero = success
+		os.Exit(1)
+
+	}
+
 }
