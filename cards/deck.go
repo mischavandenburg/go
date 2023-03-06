@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"strings"
+)
 
 // Create a new type of 'deck'
 // which is a slice of strings
@@ -33,4 +37,16 @@ func (d deck) print() {
 // defines that it will return two values of type deck.
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+// uses the Join function from the imported strings package to create one long string from a slice of strings
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+
+}
+
+// uses ioutil to write to disk. ioutil takes the filename, a byte slace and the file permissions as arguments.
+// we use the toString() function to convert our deck to one long string, and then call the type conversion to byte slice.
+func (d deck) saveToFile(filename string) error {
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }
