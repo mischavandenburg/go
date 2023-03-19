@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 // A program that greets the user using a default value and the ability to take
@@ -11,6 +12,11 @@ func main() {
 
 	name := "there"
 
-	//	os.Args[1]
-	fmt.Printf("Hi %v!", name)
+	if len(os.Args) > 1 {
+		name = os.Args[1]
+		fmt.Printf("Hi %v!", name)
+		os.Exit(0)
+	} else {
+		fmt.Printf("Hi %v!", name)
+	}
 }
