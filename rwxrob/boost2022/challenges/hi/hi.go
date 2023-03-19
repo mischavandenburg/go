@@ -14,9 +14,6 @@ func main() {
 
 	if len(os.Args) > 1 {
 		name = os.Args[1]
-		fmt.Printf("Hi %v!", name)
-		os.Exit(0)
-	} else {
-		fmt.Printf("Hi %v!", name)
 	}
+	fmt.Printf("Hi %v!", name)
 }
