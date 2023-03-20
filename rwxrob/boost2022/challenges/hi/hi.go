@@ -12,8 +12,13 @@ func main() {
 
 	name := "there"
 
+	// next step: if more arguments are provided, combine them to one string and print it out.
 	if len(os.Args) > 1 {
-		name = os.Args[1]
+		name = ""
+		for _, value := range os.Args {
+			name += " " + value
+		}
+
 	}
 	fmt.Printf("Hi %v!", name)
 }
