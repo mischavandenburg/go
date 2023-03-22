@@ -11,4 +11,5 @@ func main() {
 	// more ways to print
 	// This logs and reirects to stderr
 	log.Println("Hello World, using log")
+	Foo()
 }
