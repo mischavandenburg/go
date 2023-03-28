@@ -7,5 +7,5 @@ import (
 
 func Make(s string) {
 	t := strings.Title(s)
-	fmt.Println(t)
+	fmt.Printf(t)
 }
