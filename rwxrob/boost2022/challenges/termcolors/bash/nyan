@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source ./termcolors
+
+printf "$CLEAR"
+
+# To remove the cursor:
+# printf "\e[?25l"
+
+# To remove the cursor:
+printf $CLEAR$CUROFF
+
+# Note that trap needs to be called twice
+# The trap command is necesary to get our cursor back after sending ctrl + c
+trap "printf \"$CLEAR${CURON}Interrupt detected\n\"; exit; trap -- - SIGINT SIGTERM" SIGTERM SIGINT
+
+while true; do
+	# printf "$CLEAR"
+	printf "$(randcolor)nyan"
+	sleep 0.1
+done
+
+printf "$RESET"

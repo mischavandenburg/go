@@ -1,3 +1,5 @@
+// Package title converts a string to title case.
+
 package title
 
 import (
