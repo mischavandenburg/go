@@ -1,5 +1,11 @@
 package termcolors
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 // 033 is the octal notation for the ESC ANSI character
 //
 //
@@ -17,3 +23,15 @@ const Reset = "\033[0m"
 
 // This is the same as typing "clear" in the terminal:
 const Clear = "\033[H\033[2J"
+const CurOff = "\033[?25l"
+const CurOn = "\033[?25h"
+
+//  Rand returns a random color ANSI
+
+func Rand() string {
+	rand.Seed(time.Now().UnixNano())
+	v := rand.Intn(7)
+
+	// Sprintf converts the int to string
+	return fmt.Sprintf("\033[3%vm", v)
+}
