@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
+	"github.com/mischavandenburg/go/rwxrob/boost2022/challenges/cli"
 	"github.com/mischavandenburg/go/rwxrob/boost2022/challenges/greet"
-	"github.com/mischavandenburg/go/rwxrob/boost2022/challenges/greet/internal"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	}
 	if name == "" {
 		fmt.Println("Hello there, what's your name?")
-		name, err = internal.ReadLine(os.Stdin)
+		name, err = cli.ReadLine(os.Stdin)
 		if err != nil {
 			log.Print(err)
 			return
