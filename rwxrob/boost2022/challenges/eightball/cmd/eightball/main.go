@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/mischavandenburg/go/rwxrob/boost2022/challenges/eightball"
 
 func main() {
-	fmt.Println("Welcome to the magic eightball.")
+	eightball.Run()
 }
