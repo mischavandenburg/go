@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -11,6 +12,8 @@ import (
 )
 
 func main() {
+	in := bufio.NewReader(os.Stdin)
+
 	var name string
 	var err error
 	if len(os.Args) > 1 {
@@ -18,7 +21,7 @@ func main() {
 	}
 	if name == "" {
 		fmt.Println("Hello there, what's your name?")
-		name, err = cli.ReadLine(os.Stdin)
+		name, err = cli.ReadLine(in)
 		if err != nil {
 			log.Print(err)
 			return

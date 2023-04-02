@@ -1,8 +1,10 @@
 package greet
 
-// to run use go install ./cmd/salut; salut or cmd/greet; greet
+import (
+	"fmt"
+)
 
-import "fmt"
+// to run use go install ./cmd/salut; salut or cmd/greet; greet
 
 func Hi(name string) {
 	fmt.Printf("Hi, %v, nice to meet you!\n", name)
